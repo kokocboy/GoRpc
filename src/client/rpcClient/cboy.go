@@ -1,6 +1,8 @@
 package rpcClient
 
-import "net/rpc"
+import (
+	"net/rpc"
+)
 
 const RpcServiceName = "CboyService"
 type CboyServiceClient struct {

@@ -9,11 +9,12 @@ import (
 const CboyServiceName = "CboyService"
 func RpcCboyServiceStart(){
 	rpc.RegisterName(CboyServiceName, new(CboyService))
-	listener, err := net.Listen("tcp", ":1234")
+	listener, err := net.Listen("tcp", ":1002")
 	if err != nil {
 		log.Fatal("ListenTCP error:", err)
 	}
 	for {
+		log.Println("accept wating")
 		conn, err := listener.Accept()
 		if err != nil {
 			log.Fatal("Accept error:", err)
