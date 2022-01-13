@@ -5,8 +5,11 @@ import (
 	"log"
 	"rpcClient/rpcClient"
 )
+
+var address = "172.25.144.119"
+//var address = "localhost"
 func main() {
-	client, err := rpcClient.RpcServiceStart("tcp", "47.109.21.195:1002")
+	client, err := rpcClient.RpcServiceStart("tcp", address+":1002")
 	defer client.Close()
 	if err != nil {
 		log.Fatal("dialing:", err)
